@@ -1,0 +1,88 @@
+<html>
+  <head> </head>
+  <body>
+    <b>EmployeeComponent</b>
+    <h3>employee list from Employee class</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>School</th>
+          <th>Contact</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ employee.id }}</td>
+          <td>{{ employee.name }}</td>
+          <td>{{ employee.school }}</td>
+          <td>{{ employee.contact }}</td> 
+      </tr> 
+      </tbody>     
+    </table>
+    <hr>
+    <table>
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>School</th>
+          <th>Contact</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let employee of employes">
+          <td>{{ employee.id }}</td>
+          <td (click)="SelectedEmployee(employee)" style="cursor: pointer"> {{ employee.name }}  </td>
+          <td>{{ employee.school }}</td>
+          <td>{{ employee.contact }}</td>
+        </tr> 
+      </tbody>     
+    </table>
+    <hr>
+    <b> Clicking the name of the employee list table </b>
+    <table>
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>School</th>
+          <th>Contact</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngIf="selected_employee">
+          <td>{{ selected_employee.id }}</td>
+          <td>{{ selected_employee.name }}</td>
+          <td>{{ selected_employee.school }}</td>
+          <td>{{ selected_employee.contact }}</td>
+        </tr> 
+      </tbody>     
+    </table> 
+    <hr>
+    <h1>using employee services</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>School</th>
+          <th>Contact</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let employee of val">
+          <td>{{ employee.id }}</td>
+          <td (click)="SelectedEmployee(employee)" style="cursor: pointer"> {{ employee.name }} </td>
+          <td>{{ employee.school }}</td>
+          <td>{{ employee.contact }}</td>
+          <td>
+            <button routerLink="/detail/{{ employee.id }}">View Details</button>
+          </td>
+        </tr>
+      </tbody>     
+    </table> 
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<html>
+  <head></head>
+  <body>
+    <h1>Employee Details</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>School</th>
+          <th>Contact</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngIf="employeeDetails">
+          <td>{{ employeeDetails.id }}</td>
+          <td>{{ employeeDetails.name }}</td>
+          <td>{{ employeeDetails.school }}</td>
+          <td>{{ employeeDetails.contact }}</td>
+        </tr>        
+      </tbody>     
+    </table>
+  </body>
+</html>
+
